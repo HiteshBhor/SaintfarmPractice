@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="page_heading_text_size">16sp</dimen>
+    <dimen name="page_description_text_size">10sp</dimen>
+    <dimen name="et_heading_text_size">12sp</dimen>
+    <dimen name="hint_text_size">16sp</dimen>
+    <dimen name="btn_text_size">12sp</dimen>
+
+    <!--LoginPage-->
+    <dimen name="login_page_welcome_text_size">16sp</dimen>
+
+
+</resources>

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:padding="36dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:text="Register"
+            android:textSize="@dimen/page_heading_text_size"
+            android:textColor="#4C4C4C"
+            android:textStyle="bold"
+            android:fontFamily="@font/nunito_sans_bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Before we get to shopping, let us get to know you a \n little better."
+            android:textSize="@dimen/page_description_text_size"
+            android:fontFamily="@font/nunito_sans_regular"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="First Name*"
+            android:textSize="@dimen/et_heading_text_size"
+            android:textColor="@color/et_heading_text_color"
+            android:fontFamily="@font/nunito_sans_regular"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/page_heading_text_color"
+            android:hint="Abc"
+            android:textColorHint="@color/et_hint_text_color"
+            android:background="@drawable/edit_text_bg"
+            android:fontFamily="@font/nunito_sans_bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Last Name*"
+            android:textSize="@dimen/et_heading_text_size"
+            android:textColor="@color/et_heading_text_color"
+            android:fontFamily="@font/nunito_sans_regular"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/page_heading_text_color"
+            android:hint="Abc"
+            android:textColorHint="@color/et_hint_text_color"
+            android:background="@drawable/edit_text_bg"
+            android:fontFamily="@font/nunito_sans_bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Email Address*"
+            android:textSize="@dimen/et_heading_text_size"
+            android:textColor="@color/et_heading_text_color"
+            android:fontFamily="@font/nunito_sans_regular"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/page_heading_text_color"
+            android:hint="username@gmail.com"
+            android:textColorHint="@color/et_hint_text_color"
+            android:background="@drawable/edit_text_bg"
+            android:fontFamily="@font/nunito_sans_bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="New Password*"
+            android:textSize="@dimen/et_heading_text_size"
+            android:textColor="@color/et_heading_text_color"
+            android:fontFamily="@font/nunito_sans_regular"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/page_heading_text_color"
+            android:hint="username@gmail.com"
+            android:textColorHint="@color/et_hint_text_color"
+            android:background="@drawable/edit_text_bg"
+            android:fontFamily="@font/nunito_sans_bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Confirm Password*"
+            android:textSize="@dimen/et_heading_text_size"
+            android:textColor="@color/et_heading_text_color"
+            android:fontFamily="@font/nunito_sans_regular"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:hint="username@gmail.com"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/page_heading_text_color"
+            android:textColorHint="@color/et_hint_text_color"
+            android:background="@drawable/edit_text_bg"
+            android:fontFamily="@font/nunito_sans_bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Address*"
+            android:textSize="@dimen/et_heading_text_size"
+            android:textColor="@color/et_heading_text_color"
+            android:fontFamily="@font/nunito_sans_regular"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:background="@drawable/edit_text_bg"
+            android:fontFamily="@font/nunito_sans_bold"
+            android:hint="Search building/Area/Etc."
+            android:padding="10dp"
+            android:textColor="@color/page_heading_text_color"
+            android:textColorHint="@color/et_hint_text_color"
+            android:textSize="14sp">
+
+        </EditText>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:padding="10dp"
+            android:textSize="14sp"
+            android:textColor="@color/page_heading_text_color"
+            android:hint="House/Flat/Block No./Building/Complex"
+            android:textColorHint="@color/et_hint_text_color"
+            android:background="@drawable/edit_text_bg"
+            android:fontFamily="@font/nunito_sans_bold"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="Save and proceed"
+            android:textSize="@dimen/btn_text_size"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_bg"
+            android:textAllCaps="false"
+            android:fontFamily="@font/nunito_sans_bold"/>
+
+    </LinearLayout>
+
+</ScrollView>
