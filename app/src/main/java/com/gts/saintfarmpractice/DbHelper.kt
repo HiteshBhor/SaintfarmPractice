@@ -27,14 +27,14 @@ class DBHelper(context: Context?) :
         contentValues.put("lastName", password)
         contentValues.put("address", password)
         val result = MyDB.insert("users", null, contentValues)
-        return if (result == -1L) false else true
+        return result != -1L
     }
 
     fun checkusername(username: String): Boolean {
         val MyDB = this.writableDatabase
         val cursor: Cursor =
             MyDB.rawQuery("Select * from users where username = ?", arrayOf(username))
-        return if (cursor.getCount() > 0) true else false
+        return cursor.count > 0
     }
 
     fun checkusernamepassword(username: String, password: String): Boolean {
@@ -43,7 +43,7 @@ class DBHelper(context: Context?) :
             "Select * from users where username = ? and password = ?",
             arrayOf(username, password)
         )
-        return if (cursor.getCount() > 0) true else false
+        return cursor.count > 0
     }
 
     companion object {

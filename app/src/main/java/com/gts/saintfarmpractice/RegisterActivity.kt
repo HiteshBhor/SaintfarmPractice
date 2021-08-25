@@ -1,13 +1,14 @@
 package com.gts.saintfarmpractice
 
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -21,6 +22,8 @@ class RegisterActivity : AppCompatActivity() {
     var register: Button? = null
     var DB: DBHelper? = null
 
+    lateinit var viewModel: UserViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
@@ -33,6 +36,13 @@ class RegisterActivity : AppCompatActivity() {
         address = findViewById<View>(R.id.et_address) as EditText
         register = findViewById<View>(R.id.btn_register) as Button
         DB = DBHelper(this)
+
+        viewModel = ViewModelProvider(this@RegisterActivity, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(UserViewModel::class.java)
+
+        viewModel.allUsers.observe(this, Observer { list ->
+            list?.let {
+            }
+        })
 
         register!!.setOnClickListener {
                 val user = username!!.text.toString()
@@ -50,41 +60,45 @@ class RegisterActivity : AppCompatActivity() {
                     ).show()
 
                 else {
-                    if (pass == repass) {
-                        val checkuser = DB!!.checkusername(user)
-                        if (checkuser == false) {
-                            val insert = DB!!.insertData(user, pass, firstName, lastName, address)
-                            if (insert == true) {
-                                Toast.makeText(
-                                    this@RegisterActivity,
-                                    "Registered successfully. Please Login with credentials",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                                val intent = Intent(applicationContext, LoginActivity::class.java)
-                                startActivity(intent)
-                            } else {
-                                Toast.makeText(
-                                    this@RegisterActivity,
-                                    "Registration failed",
-                                    Toast.LENGTH_SHORT
-                                ).show()
-                            }
-                        } else {
-                            Toast.makeText(
-                                this@RegisterActivity,
-                                "User already exists! please sign in",
-                                Toast.LENGTH_SHORT
-                            ).show()
-                        }
-                    } else {
-                        Toast.makeText(
-                            this@RegisterActivity,
-                            "Passwords not matching",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
+
+                    viewModel.registerUser(User(firstName, lastName, user, pass, address ))
+                    Toast.makeText(this, "User $firstName Inserted Successfully", Toast.LENGTH_SHORT).show()
+
+
+//                    if (pass == repass) {
+//                        val checkuser = DB!!.checkusername(user)
+//                        if (checkuser == false) {
+//                            val insert = DB!!.insertData(user, pass, firstName, lastName, address)
+//                            if (insert == true) {
+//                                Toast.makeText(
+//                                    this@RegisterActivity,
+//                                    "Registered successfully. Please Login with credentials",
+//                                    Toast.LENGTH_SHORT
+//                                ).show()
+//                                val intent = Intent(applicationContext, LoginActivity::class.java)
+//                                startActivity(intent)
+//                            } else {
+//                                Toast.makeText(
+//                                    this@RegisterActivity,
+//                                    "Registration failed",
+//                                    Toast.LENGTH_SHORT
+//                                ).show()
+//                            }
+//                        } else {
+//                            Toast.makeText(
+//                                this@RegisterActivity,
+//                                "User already exists! please sign in",
+//                                Toast.LENGTH_SHORT
+//                            ).show()
+//                        }
+//                    } else {
+//                        Toast.makeText(
+//                            this@RegisterActivity,
+//                            "Passwords not matching",
+//                            Toast.LENGTH_SHORT
+//                        ).show()
+//                    }
                 }
         }
-
     }
 }
