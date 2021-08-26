@@ -8,6 +8,8 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import kotlinx.android.synthetic.main.activity_login.*
 
 
 class LoginActivity : AppCompatActivity() {
@@ -18,6 +20,11 @@ class LoginActivity : AppCompatActivity() {
     var registerForNewAccount: TextView? = null
     var forgotPassword: TextView? = null
     var DB: DBHelper? = null
+
+    lateinit var arrayUsers: ArrayList<User>
+
+    lateinit var viewModel: UserViewModel
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +41,10 @@ class LoginActivity : AppCompatActivity() {
 
             startActivity(Intent(this, RegisterActivity::class.java))
         }
+
+        viewModel = ViewModelProvider(this@LoginActivity, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(UserViewModel::class.java)
+
+
 
         btnlogin!!.setOnClickListener{
 
@@ -67,4 +78,32 @@ class LoginActivity : AppCompatActivity() {
         }
 
     }
+
+    private fun isValidInput(): Boolean {
+        var isValid: Boolean = true
+        var message: String = ""
+
+        message = Validator.isValidEmail(
+            this@LoginActivity,
+            username?.text.toString().trim()
+        )
+        if (message != null && message.isNotEmpty()) {
+            isValid = false
+            //Set number UI to error
+            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+        }
+
+        message = Validator.isValidNewPassword(
+            this@LoginActivity,
+            password?.text.toString().trim()
+        )
+        if (message != null && message.isNotEmpty()) {
+            isValid = false
+            //Set number UI to error
+            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+        }
+
+        return isValid
+    }
+
 }

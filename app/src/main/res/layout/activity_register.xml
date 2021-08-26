@@ -114,7 +114,7 @@
                     android:padding="10dp"
                     android:textColor="@color/page_heading_text_color"
                     android:inputType="textPassword"
-                    android:hint="username@gmail.com"
+                    android:hint="Abc"
                     android:textColorHint="@color/et_hint_text_color"
                     android:background="@drawable/edit_text_bg"
                     android:fontFamily="@font/nunito_sans_bold"/>
@@ -134,7 +134,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="7dp"
                     android:inputType="textPassword"
-                    android:hint="username@gmail.com"
+                    android:hint="Abc"
                     android:padding="10dp"
                     android:textColor="@color/page_heading_text_color"
                     android:textColorHint="@color/et_hint_text_color"

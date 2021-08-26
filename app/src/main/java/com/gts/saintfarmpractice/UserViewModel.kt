@@ -1,16 +1,17 @@
 package com.gts.saintfarmpractice
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 
-public class UserViewModel(application: Application): AndroidViewModel(application) {
+class UserViewModel(application: Application): AndroidViewModel(application) {
 
     private val repository: UserRepository
     val allUsers:LiveData<List<User>>
+    var checkEmail: LiveData<User>? = null
 
     init {
         val dao= UserDatabase.getUserDatabase(application).getUserDao()
@@ -22,8 +23,8 @@ public class UserViewModel(application: Application): AndroidViewModel(applicati
         repository.registerUser(user)
     }
 
-    fun checkEmail(email: String) = viewModelScope.launch  (Dispatchers.IO) {
-        repository.checkEmail(email)
+    fun checkEmail(email: String): LiveData<User> {
+        return  repository.checkEmail(email).asLiveData()
     }
 
 }
