@@ -1,4 +1,4 @@
-package com.gts.saintfarmpractice
+package com.gts.saintfarmpractice.models
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

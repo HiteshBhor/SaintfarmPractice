@@ -1,4 +1,4 @@
-package com.gts.saintfarmpractice;
+package com.gts.saintfarmpractice.util;
 
 import android.content.Context;
 
@@ -40,7 +40,7 @@ public class Validator {
     public static String isValidEmail(Context context, String email) {
         String message = "";
         if (email == null || (email.trim()).equals("") || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            message = "Enter Email Address";
+            message = "Enter Valid Email Address";
         }
         return message;
     }
@@ -111,7 +111,7 @@ public class Validator {
         String message = "";
         if (password == null || (password.trim()).equals("")) {
             // Password Empty
-            // 1 latter Capital
+            // 1 letter Capital
             message = "Enter Valid Password";
 //        } else if (password.trim().length() < 8) {
 //            message = context.getResources().getString(R.string.password_length_invalid);
@@ -133,7 +133,7 @@ public class Validator {
             // 1 latter Capital
             message = "Confirm Password";
         } else if (!(password.trim()).equalsIgnoreCase(confirmPassword.trim())) {
-            message = "New Password & Confirm did not match";
+            message = "New Password & Confirm Password did not match";
 //        } else if (password.trim().length() > 15) {
 //            message = context.getResources().getString(R.string.password_length_valid_maximum);
 //        } else if (!password.matches(PASSWORD_PATTERN)) {

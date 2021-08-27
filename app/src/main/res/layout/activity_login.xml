@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".LoginActivity">
+    tools:context=".ui.auth.LoginActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -123,7 +123,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
-                android:text="Username*"
+                android:text="Email ID*"
                 android:textSize="@dimen/et_heading_text_size"
                 android:textColor="@color/et_heading_text_color"
                 android:fontFamily="@font/nunito_sans_regular"/>
@@ -133,6 +133,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
                 android:padding="10dp"
                 android:textColor="@color/page_heading_text_color"
                 android:hint="Enter your username/ phone no,"
@@ -154,6 +156,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
+                android:inputType="textPassword"
+                android:maxLines="1"
                 android:padding="10dp"
                 android:textColor="@color/page_heading_text_color"
                 android:hint="Password"

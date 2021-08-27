@@ -1,4 +1,4 @@
-package com.gts.saintfarmpractice
+package com.gts.saintfarmpractice.ui.auth
 
 
 import android.content.Intent
@@ -10,6 +10,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import com.gts.saintfarmpractice.*
+import com.gts.saintfarmpractice.models.User
+import com.gts.saintfarmpractice.util.Validator
+import com.gts.saintfarmpractice.viewmodel.UserViewModel
 
 
 class RegisterActivity : AppCompatActivity() {
@@ -40,7 +44,8 @@ class RegisterActivity : AppCompatActivity() {
         register = findViewById<View>(R.id.btn_register) as Button
         DB = DBHelper(this)
 
-        viewModel = ViewModelProvider(this@RegisterActivity, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(UserViewModel::class.java)
+        viewModel = ViewModelProvider(this@RegisterActivity, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(
+            UserViewModel::class.java)
 
         viewModel.allUsers.observe(this, Observer { list ->
             list?.let {
@@ -48,6 +53,12 @@ class RegisterActivity : AppCompatActivity() {
         })
 
         register!!.setOnClickListener {
+
+            val firstName = firstName!!.text.toString()
+            val lastName = lastName!!.text.toString()
+            val eMail = eMail!!.text.toString()
+            val password = password!!.text.toString()
+            val address = address!!.text.toString()
 
             if (isValidInput()){
 
@@ -58,17 +69,14 @@ class RegisterActivity : AppCompatActivity() {
                     }
                 })
                 for (itm in arrayUsers){
-                    if(itm.email.equals(eMail!!.text.toString())){
+                    if(itm.email == eMail){
                         Toast.makeText(this@RegisterActivity, "User already exists! please sign in", Toast.LENGTH_SHORT).show()
                         return@setOnClickListener
                     }
                 }
                 viewModel.registerUser(
-                    User(firstName!!.text.toString(),
-                        lastName!!.text.toString(),
-                        eMail!!.text.toString(),
-                        password!!.text.toString(),
-                        address!!.text.toString()))
+                    User(firstName, lastName, eMail, password, address)
+                )
                 Toast.makeText(this@RegisterActivity, "Registered successfully. Please Login with credentials", Toast.LENGTH_SHORT).show()
                 startActivity(Intent(this@RegisterActivity, LoginActivity::class.java ))
                 finish()
@@ -80,14 +88,16 @@ class RegisterActivity : AppCompatActivity() {
     private fun isValidInput(): Boolean {
         var isValid: Boolean = true
         var message: String = ""
+
         message = Validator.isValidFirstName(
             this@RegisterActivity,
             firstName?.text.toString().trim()
         )
         if (message != null && message.isNotEmpty()) {
             isValid = false
-            //Set number UI to error
+
             Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+            return isValid
         }
 
         message = Validator.isValidLastName(
@@ -96,8 +106,9 @@ class RegisterActivity : AppCompatActivity() {
         )
         if (message != null && message.isNotEmpty()) {
             isValid = false
-            //Set number UI to error
+
             Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+            return isValid
         }
 
         message = Validator.isValidEmail(
@@ -106,8 +117,9 @@ class RegisterActivity : AppCompatActivity() {
         )
         if (message != null && message.isNotEmpty()) {
             isValid = false
-            //Set number UI to error
+
             Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+            return isValid
         }
 
         message = Validator.isValidNewPassword(
@@ -116,8 +128,9 @@ class RegisterActivity : AppCompatActivity() {
         )
         if (message != null && message.isNotEmpty()) {
             isValid = false
-            //Set number UI to error
+
             Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+            return isValid
         }
 
         message = Validator.isValidConfirmPassword(
@@ -127,8 +140,9 @@ class RegisterActivity : AppCompatActivity() {
         )
         if (message != null && message.isNotEmpty()) {
             isValid = false
-            //Set number UI to error
+
             Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+            return isValid
         }
 
         message = Validator.isValidAddress1(
@@ -137,8 +151,9 @@ class RegisterActivity : AppCompatActivity() {
         )
         if (message != null && message.isNotEmpty()) {
             isValid = false
-            //Set number UI to error
+
             Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+            return isValid
         }
 
         return isValid
