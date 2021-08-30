@@ -14,8 +14,11 @@ import com.gts.saintfarmpractice.*
 import com.gts.saintfarmpractice.models.User
 import com.gts.saintfarmpractice.util.Validator
 import com.gts.saintfarmpractice.viewmodel.UserViewModel
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.InternalCoroutinesApi
 
-
+@ExperimentalCoroutinesApi
+@InternalCoroutinesApi
 class RegisterActivity : AppCompatActivity() {
 
     var eMail: EditText? = null

@@ -6,8 +6,9 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.gts.saintfarmpractice.dao.UserDao
 import com.gts.saintfarmpractice.models.User
+import com.gts.saintfarmpractice.models.WebUser
 
-@Database(entities = arrayOf(User::class), version = 1, exportSchema = false)
+@Database(entities = [User::class, WebUser::class], version = 2, exportSchema = false)
 abstract class UserDatabase: RoomDatabase() {
 
     abstract fun getUserDao(): UserDao

@@ -17,8 +17,11 @@ import com.gts.saintfarmpractice.ui.MainActivity
 import com.gts.saintfarmpractice.util.Validator
 import com.gts.saintfarmpractice.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.InternalCoroutinesApi
 
-
+@ExperimentalCoroutinesApi
+@InternalCoroutinesApi
 class LoginActivity : BaseActivity() {
 
     private lateinit var mSharedPreferences: SharedPreferences
@@ -34,7 +37,6 @@ class LoginActivity : BaseActivity() {
     lateinit var arrayUsers: ArrayList<User>
 
     lateinit var viewModel: UserViewModel
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

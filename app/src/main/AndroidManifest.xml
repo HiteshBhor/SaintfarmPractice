@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gts.saintfarmpractice">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,8 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SaintfarmPractice">
-        <activity android:name=".ui.MyProfileActivity"></activity>
-        <activity android:name=".ui.MainActivity"></activity>
+        <activity android:name=".ui.UserListActivity"></activity>
+        <activity android:name=".ui.MyProfileActivity" />
+        <activity android:name=".ui.MainActivity" />
         <activity
             android:name=".ui.auth.LoginActivity"
             android:screenOrientation="portrait">
@@ -22,7 +27,7 @@
         </activity>
         <activity
             android:name=".ui.auth.RegisterActivity"
-            android:screenOrientation="portrait"></activity>
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>
