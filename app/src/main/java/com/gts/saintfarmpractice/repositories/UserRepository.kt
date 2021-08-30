@@ -15,6 +15,10 @@ class UserRepository(private val userDao: UserDao) {
         userDao.insertWebUser(webUser)
     }
 
+    suspend fun deleteAllWebUsers(){
+        userDao.deleteAllWebUsers()
+    }
+
     suspend fun registerUser(user: User){
         userDao.registerUser(user)
     }

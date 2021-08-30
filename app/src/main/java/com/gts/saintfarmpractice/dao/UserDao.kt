@@ -1,7 +1,9 @@
 package com.gts.saintfarmpractice.dao
 
 import androidx.lifecycle.LiveData
-import androidx.room.*
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.Query
 import com.gts.saintfarmpractice.models.User
 import com.gts.saintfarmpractice.models.WebUser
 import kotlinx.coroutines.flow.Flow
@@ -14,6 +16,9 @@ interface UserDao {
 
     @Query("SELECT * FROM WebUsers ORDER BY id ASC")
     fun getAllWebUsers(): LiveData<List<WebUser>>
+
+    @Query("DELETE FROM WebUsers")
+    fun deleteAllWebUsers()
 
     @Insert//(onConflict = OnConflictStrategy.ABORT)
     suspend fun registerUser(user: User)

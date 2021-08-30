@@ -26,6 +26,10 @@ class UserViewModel(application: Application): AndroidViewModel(application) {
         repository.insertWebUser(webUser)
     }
 
+    fun deleteAllWebUsers() = viewModelScope.launch(Dispatchers.IO) {
+        repository.deleteAllWebUsers()
+    }
+
     fun registerUser(user: User) = viewModelScope.launch(Dispatchers.IO) {
         repository.registerUser(user)
     }

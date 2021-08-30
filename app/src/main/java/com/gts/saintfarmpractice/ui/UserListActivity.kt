@@ -46,7 +46,35 @@ class UserListActivity : AppCompatActivity() {
 
         initObserver()
 
-        fetchUserList()
+
+        if (isNetworkAvailable(this)){
+
+            fetchUserList()
+            webUserViewModel.allWebUsers.observe(this, { list ->
+                list?.let {
+                    recyclerviewUsers.layoutManager =LinearLayoutManager(this)
+                    val adapter = UserListAdapter(this, it as ArrayList<WebUser>)
+                    recyclerviewUsers.adapter = adapter
+                    adapter.updateList(it)
+                }
+
+            })
+
+        }else{
+
+            Toast.makeText(this@UserListActivity, "Fetched from local DB", Toast.LENGTH_SHORT).show()
+
+            webUserViewModel.allWebUsers.observe(this, { list ->
+                list?.let {
+                    recyclerviewUsers.layoutManager =LinearLayoutManager(this)
+                    val adapter = UserListAdapter(this, it as ArrayList<WebUser>)
+                    recyclerviewUsers.adapter = adapter
+                    adapter.updateList(it)
+                }
+
+            })
+
+        }
 
 //        recyclerviewUsers.layoutManager =LinearLayoutManager(this)
 //        val adapter = UserListAdapter(this, )
@@ -76,23 +104,37 @@ class UserListActivity : AppCompatActivity() {
                         /*val adapter = UserListAdapter(this, data.data)
                         recyclerviewUsers.adapter = adapter*/
 
+                        webUserViewModel.deleteAllWebUsers()
+
                         for (itm in data.data){
 
                             webUserViewModel.insertWebUser(WebUser(itm.avatar, itm.email, itm.first_name, itm.last_name))
                         }
                         Toast.makeText(this@UserListActivity ,"Web User list saved successfully ", Toast.LENGTH_LONG).show()
-                        webUserViewModel.allWebUsers.observe(this, { list ->
-                            list?.let {
-                                recyclerviewUsers.layoutManager =LinearLayoutManager(this)
-                                val adapter = UserListAdapter(this, it as ArrayList<WebUser>)
-                                recyclerviewUsers.adapter = adapter
-                                adapter.updateList(it)
-                            }
-
-                        })
                     }
                 }
             }
         )
     }
+
+    fun isNetworkAvailable(context: Context): Boolean {
+        // It answers the queries about the state of network connectivity.
+        val connectivityManager = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            val network      = connectivityManager.activeNetwork ?: return false
+            val activeNetWork = connectivityManager.getNetworkCapabilities(network) ?: return false
+            return when {
+                activeNetWork.hasTransport(NetworkCapabilities.TRANSPORT_WIFI) -> true
+                activeNetWork.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR) -> true
+                //for other device how are able to connect with Ethernet
+                activeNetWork.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET) -> true
+                else -> false
+            }
+        } else {
+            // Returns details about the currently active default data network.
+            val networkInfo = connectivityManager.activeNetworkInfo
+            return networkInfo != null && networkInfo.isConnectedOrConnecting
+        }
+    }
+
 }
