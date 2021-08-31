@@ -11,149 +11,137 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
+            android:paddingStart="36dp"
+            android:paddingEnd="36dp"
             android:orientation="vertical"
             android:background="@color/white">
 
-                <TextView
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="25dp"
                     android:text="Register"
-                    android:textSize="18dp"
+                    android:textSize="16dp"
                     android:textColor="#4C4C4C"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/nunito_sans_bold"/>
+                    app:textStyle = "7"/>
 
-                <TextView
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/et_hint_text_color"
+                    android:textColor="#4C4C4C"
                     android:layout_marginTop="5dp"
                     android:text="Before we get to shopping, let us get to know you a\nlittle better."
-                    android:fontFamily="@font/nunito_sans_regular"/>
+                    android:textSize="10dp"
+                    app:textStyle = "8"/>
 
-                <TextView
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="32dp"
                     android:text="First Name*"
-                    android:textSize="@dimen/et_heading_text_size"
                     android:textColor="@color/et_heading_text_color"
-                    android:fontFamily="@font/nunito_sans_regular"/>
+                    android:textSize="12dp"
+                    app:textStyle = "8"/>
 
-                <EditText
+                <com.gts.saintfarmpractice.util.SaintfarmEditText
                     android:id="@+id/et_firstName"
+                    style="@style/EditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:textColor="@color/page_heading_text_color"
-                    android:hint="Abc"
-                    android:textColorHint="@color/et_hint_text_color"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/edit_text_bg"
-                    android:fontFamily="@font/nunito_sans_bold"/>
+                    android:hint="Abc"
+                    android:inputType="text"
+                    app:textStyle="7" />
 
-                <TextView
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:text="Last Name*"
                     android:textSize="@dimen/et_heading_text_size"
                     android:textColor="@color/et_heading_text_color"
-                    android:fontFamily="@font/nunito_sans_regular"/>
+                    app:textStyle = "8"/>
 
-                <EditText
+                <com.gts.saintfarmpractice.util.SaintfarmEditText
                     android:id="@+id/et_lastName"
+                    style="@style/EditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:textColor="@color/page_heading_text_color"
-                    android:hint="Abc"
-                    android:textColorHint="@color/et_hint_text_color"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/edit_text_bg"
-                    android:fontFamily="@font/nunito_sans_bold"/>
+                    android:hint="Abc"
+                    android:inputType="text"
+                    app:textStyle="7" />
 
-                <TextView
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:text="Email Address*"
                     android:textSize="@dimen/et_heading_text_size"
                     android:textColor="@color/et_heading_text_color"
-                    android:fontFamily="@font/nunito_sans_regular"/>
+                    app:textStyle = "8"/>
 
-                <EditText
+                <com.gts.saintfarmpractice.util.SaintfarmEditText
                     android:id="@+id/et_eMail"
+                    style="@style/EditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:textColor="@color/page_heading_text_color"
-                    android:hint="username@gmail.com"
-                    android:textColorHint="@color/et_hint_text_color"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/edit_text_bg"
-                    android:fontFamily="@font/nunito_sans_bold"/>
+                    android:hint="Abc"
+                    android:inputType="text"
+                    app:textStyle="7" />
 
-                <TextView
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:text="New Password*"
                     android:textSize="@dimen/et_heading_text_size"
                     android:textColor="@color/et_heading_text_color"
-                    android:fontFamily="@font/nunito_sans_regular"/>
+                    app:textStyle = "8"/>
 
-                <EditText
+                <com.gts.saintfarmpractice.util.SaintfarmEditText
                     android:id="@+id/et_newPassword"
+                    style="@style/EditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:textColor="@color/page_heading_text_color"
-                    android:inputType="textPassword"
-                    android:hint="Abc"
-                    android:textColorHint="@color/et_hint_text_color"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/edit_text_bg"
-                    android:fontFamily="@font/nunito_sans_bold"/>
+                    android:hint="Abc"
+                    android:inputType="text"
+                    app:textStyle="7" />
 
-                <TextView
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:text="Confirm Password*"
                     android:textSize="@dimen/et_heading_text_size"
                     android:textColor="@color/et_heading_text_color"
-                    android:fontFamily="@font/nunito_sans_regular"/>
+                    app:textStyle = "8"/>
 
-                <EditText
+                <com.gts.saintfarmpractice.util.SaintfarmEditText
                     android:id="@+id/et_confirmPassword"
+                    style="@style/EditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:maxLines="1"
-                    android:inputType="textPassword"
-                    android:hint="Abc"
-                    android:padding="10dp"
-                    android:textColor="@color/page_heading_text_color"
-                    android:textColorHint="@color/et_hint_text_color"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/edit_text_bg"
-                    android:fontFamily="@font/nunito_sans_bold"/>
+                    android:hint="Abc"
+                    android:inputType="text"
+                    app:textStyle="7" />
 
-                <TextView
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="24dp"
                     android:text="Address*"
                     android:textSize="@dimen/et_heading_text_size"
                     android:textColor="@color/et_heading_text_color"
-                    android:fontFamily="@font/nunito_sans_regular"/>
+                    app:textStyle = "8"/>
 
         <!--        <EditText-->
         <!--            android:layout_width="match_parent"-->
@@ -169,31 +157,27 @@
 
         <!--        </EditText>-->
 
-                <EditText
+                <com.gts.saintfarmpractice.util.SaintfarmEditText
                     android:id="@+id/et_address"
+                    style="@style/EditText"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="7dp"
-                    android:maxLines="1"
-                    android:padding="10dp"
-                    android:textColor="@color/page_heading_text_color"
-                    android:hint="House/Flat/Block No./Building/Complex"
-                    android:textColorHint="@color/et_hint_text_color"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="10dp"
                     android:background="@drawable/edit_text_bg"
-                    android:fontFamily="@font/nunito_sans_bold"/>
-
+                    android:hint="Abc"
+                    android:inputType="text"
+                    app:textStyle="7" />
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_register"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="15dp"
                     android:layout_marginBottom="25dp"
                     android:text="Save and proceed"
                     android:textSize="@dimen/btn_text_size"
                     android:textColor="@color/white"
                     android:background="@drawable/btn_bg"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/nunito_sans_bold"/>
+                    android:textAllCaps="false"/>
 
         </LinearLayout>
 

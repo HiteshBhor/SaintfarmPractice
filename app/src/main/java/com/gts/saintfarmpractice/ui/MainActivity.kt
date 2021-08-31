@@ -4,7 +4,6 @@ import android.content.Intent
 import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.Toast
 import androidx.core.view.GravityCompat
 import androidx.lifecycle.ViewModelProvider
 import com.google.android.material.navigation.NavigationView
@@ -41,17 +40,26 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         setupActionBar()
 
-        nav_view.setNavigationItemSelectedListener(this)
+        currentUserDetails(email)
 
-        updateUserNameEmail(email)
+        nav_view.setNavigationItemSelectedListener(this)
 
     }
 
-    private fun updateUserNameEmail(email: String?) {
+    private fun currentUserDetails(email: String?) {
         viewModel.checkEmail(email!!).observe(this, {
 
-//            tv_username.text = it.firstName
-//            tv_eMail.text = email
+            var firstName = it.firstName
+            var lastName = it.lastName
+            var address = it.address
+
+            editor.putString("firstName", firstName)
+            editor.putString("lastName", lastName)
+            editor.putString("address", address)
+            editor.apply()
+
+            tv_username.text = mSharedPreferences.getString("firstName", "Error")
+            tv_eMail.text = mSharedPreferences.getString("email", "Error")
         })
     }
 
@@ -92,10 +100,13 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
             R.id.nav_sign_out ->{
 
-                editor.putString("email", "");
-                editor.putString("password", "");
-                editor.putBoolean("isLoggedIn", false);
-                editor.apply();
+                editor.putString("email", "")
+                editor.putString("password", "")
+                editor.putString("firstName", "")
+                editor.putString("lastName", "")
+                editor.putString("address", "")
+                editor.putBoolean("isLoggedIn", false)
+                editor.apply()
 
                 val intent = Intent(this, LoginActivity::class.java)
                 intent.putExtra("finish", true)

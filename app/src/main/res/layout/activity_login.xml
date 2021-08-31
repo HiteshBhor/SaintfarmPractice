@@ -10,7 +10,7 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="fitXY"
+        android:scaleType="centerInside"
         android:src="@drawable/img_login_bg"/>
 
     <LinearLayout
@@ -23,53 +23,48 @@
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="vertical"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
             android:gravity="center_vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
                 android:orientation="horizontal">
 
-                <TextView
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="2"
                     android:text="Welcome to"
-                    android:textSize="@dimen/login_page_welcome_text_size"
                     android:textColor="#4C4C4C"
-                    android:textStyle="bold"
-                    android:fontFamily="@font/nunito_sans_regular"/>
+                    android:textSize="16dp"
+                    app:textStyle="8" />
 
-                <TextView
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="end"
                     android:text="Explore app"
                     android:textColor="@color/et_heading_text_color"
-                    android:fontFamily="@font/nunito_sans_bold"/>
+                    app:textStyle="7"/>
 
             </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <ImageView
+                android:layout_width="132dp"
+                android:layout_height="31dp"
                 android:layout_marginTop="10dp"
-                android:text="Saintfarm"
-                android:textSize="30sp"
-                android:textColor="@color/et_heading_text_color"
-                android:fontFamily="@font/nunito_sans_bold"/>
+                android:src="@drawable/ic_saintfood"/>
 
-            <TextView
+            <com.gts.saintfarmpractice.util.SaintfarmTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
                 android:text="Thank you for choosing us.\nEvery vegetable, fruit, grain or\nherb we locally produce on our \nfarms, is carefully curated by \nexpert hands to give you the \nrichest of experiences."
-                android:textSize="@dimen/login_page_welcome_text_size"
+                android:textSize="16dp"
                 android:textColor="@color/et_heading_text_color"
-                android:fontFamily="@font/nunito_sans_regular"/>
+                app:textStyle="4"/>
 
         </LinearLayout>
 
@@ -77,20 +72,19 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
-            android:gravity="bottom"
+            android:layout_marginStart="36dp"
+            android:layout_marginEnd="36dp"
+            android:gravity="center_vertical"
             android:orientation="vertical">
 
 
-            <TextView
+            <com.gts.saintfarmpractice.util.SaintfarmTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Login"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:textColor="#4C4C4C"
-                android:textStyle="bold"
-                android:fontFamily="@font/nunito_sans_bold"/>
+                app:textStyle="7"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,14 +92,15 @@
                 android:layout_marginTop="5dp"
                 android:orientation="horizontal">
 
-                <TextView
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="or"
-                    android:textSize="14dp"
-                    android:textColor="@color/black"/>
+                    android:text="Or"
+                    android:textSize="10dp"
+                    android:textColor="@color/black"
+                    app:textStyle="8"/>
 
-                <TextView
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:id="@+id/tv_registerForNewAccount"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -114,58 +109,52 @@
                     android:gravity="end"
                     android:text="Register for a new account"
                     android:textColor="@color/et_heading_text_color"
-                    android:textSize="16dp"
-                    android:fontFamily="@font/nunito_sans_bold"/>
+                    android:textSize="12dp"
+                    app:textStyle="7"/>
 
             </LinearLayout>
 
-            <TextView
+            <com.gts.saintfarmpractice.util.SaintfarmTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="34dp"
                 android:text="Email ID*"
-                android:textSize="@dimen/et_heading_text_size"
+                android:textSize="12dp"
                 android:textColor="@color/et_heading_text_color"
-                android:fontFamily="@font/nunito_sans_regular"/>
+                app:textStyle="8"/>
 
-            <EditText
+            <com.gts.saintfarmpractice.util.SaintfarmEditText
                 android:id="@+id/et_eMail_login"
+                style="@style/EditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:inputType="textEmailAddress"
-                android:maxLines="1"
-                android:padding="10dp"
-                android:textColor="@color/page_heading_text_color"
-                android:hint="Enter your username/ phone no,"
-                android:textColorHint="@color/et_hint_text_color"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/edit_text_bg"
-                android:fontFamily="@font/nunito_sans_bold"/>
+                android:hint="Abc"
+                android:inputType="text"
+                app:textStyle="7" />
 
-            <TextView
+            <com.gts.saintfarmpractice.util.SaintfarmTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="24dp"
                 android:text="Password*"
-                android:textSize="@dimen/et_heading_text_size"
+                android:textSize="12dp"
                 android:textColor="@color/et_heading_text_color"
-                android:fontFamily="@font/nunito_sans_regular"/>
+                app:textStyle="8"/>
 
-            <EditText
+            <com.gts.saintfarmpractice.util.SaintfarmEditText
                 android:id="@+id/et_password_login"
+                style="@style/EditText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:inputType="textPassword"
-                android:maxLines="1"
-                android:padding="10dp"
-                android:textColor="@color/page_heading_text_color"
-                android:hint="Password"
-                android:textColorHint="@color/et_hint_text_color"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/edit_text_bg"
-                android:fontFamily="@font/nunito_sans_bold"/>
+                android:hint="Abc"
+                android:inputType="text"
+                app:textStyle="7" />
 
-            <TextView
+            <com.gts.saintfarmpractice.util.SaintfarmTextView
                 android:id="@+id/tv_forgotPassword"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -173,21 +162,21 @@
                 android:layout_gravity="end"
                 android:gravity="end"
                 android:text="Forgot Password"
+                android:textSize="12dp"
                 android:textColor="@color/et_heading_text_color"
-                android:fontFamily="@font/nunito_sans_bold"/>
+                app:textStyle="7"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginBottom="25dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="24dp"
                 android:text="Login"
-                android:textSize="@dimen/btn_text_size"
+                android:textSize="12dp"
                 android:textColor="@color/white"
                 android:background="@drawable/btn_bg"
                 android:textAllCaps="false"
-                android:fontFamily="@font/nunito_sans_bold"/>
+                app:textStyle="7"/>
 
         </LinearLayout>
 

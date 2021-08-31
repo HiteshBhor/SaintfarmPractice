@@ -28,6 +28,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toEndOf="@+id/progressBar"
         app:layout_constraintTop_toTopOf="parent"
-        android:fontFamily="@font/nunito_sans_regular"/>
+        android:fontFamily="@font/nunitosans_normal"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

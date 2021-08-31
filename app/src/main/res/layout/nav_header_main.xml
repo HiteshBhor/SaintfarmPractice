@@ -9,7 +9,6 @@
     android:orientation="horizontal"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +36,7 @@
             android:textColor="@android:color/white"
             android:textSize="20sp"
             android:text="UserName"
-            android:fontFamily="@font/nunito_sans_bold"/>
+            android:fontFamily="@font/nunitosans_normal"/>
 
         <TextView
             android:id="@+id/tv_eMail"
@@ -50,7 +49,7 @@
             android:textColor="@android:color/white"
             android:textSize="18dp"
             android:text="username@username.com"
-            android:fontFamily="@font/nunito_sans_regular"/>
+            android:fontFamily="@font/nunitosans_normal"/>
 
     </LinearLayout>
 

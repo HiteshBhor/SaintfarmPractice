@@ -6,7 +6,6 @@ import android.net.NetworkCapabilities
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-
 import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -20,6 +19,7 @@ import com.gts.saintfarmpractice.repositories.UserListRepository
 import com.gts.saintfarmpractice.viewmodel.UserListViewModel
 import com.gts.saintfarmpractice.viewmodel.UserViewModel
 import com.gts.saintfarmpractice.webservices.RetrofitService
+import kotlinx.android.synthetic.main.activity_my_profile.*
 import kotlinx.android.synthetic.main.activity_user_list.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
@@ -38,6 +38,8 @@ class UserListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_user_list)
+
+        setupActionBar()
 
         viewModel = UserListViewModel(UserListRepository(retrofitService))
 
@@ -135,6 +137,17 @@ class UserListActivity : AppCompatActivity() {
             val networkInfo = connectivityManager.activeNetworkInfo
             return networkInfo != null && networkInfo.isConnectedOrConnecting
         }
+    }
+
+    private fun setupActionBar(){
+        setSupportActionBar(toolbar_user_list_activity)
+        val actionBar = supportActionBar
+        if (actionBar != null){
+            actionBar.setDisplayHomeAsUpEnabled(true)
+            actionBar.setHomeAsUpIndicator(R.drawable.ic_back_btn)
+            actionBar.title = "User List"
+        }
+        toolbar_user_list_activity.setNavigationOnClickListener{ onBackPressed() }
     }
 
 }

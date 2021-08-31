@@ -10,7 +10,7 @@ import com.gts.saintfarmpractice.models.User
 import com.gts.saintfarmpractice.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.activity_my_profile.*
 
-class MyProfileActivity : AppCompatActivity() {
+class  MyProfileActivity : AppCompatActivity() {
 
     lateinit var arrayUsers: ArrayList<User>
 
