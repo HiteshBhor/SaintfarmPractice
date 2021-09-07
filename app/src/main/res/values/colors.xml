@@ -11,5 +11,7 @@
     <color name="page_heading_text_color">#4C4C4C</color>
     <color name="et_heading_text_color">#B19855</color>
     <color name="et_hint_text_color">#BFBFBF</color>
+    <color name="transparent">#00000000</color>
+    <color name="strip_color">#E7E7E5</color>
 
 </resources>

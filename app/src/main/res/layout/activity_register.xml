@@ -10,7 +10,8 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
             android:paddingStart="36dp"
             android:paddingEnd="36dp"
             android:orientation="vertical"
@@ -19,11 +20,11 @@
                 <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
+                    android:layout_marginTop="55dp"
                     android:text="Register"
                     android:textSize="16dp"
                     android:textColor="#4C4C4C"
-                    app:textStyle = "7"/>
+                    app:textStyle = "7" />
 
                 <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
@@ -50,9 +51,19 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_text_bg"
-                    android:hint="Abc"
+                    android:hint="Enter First Name"
                     android:inputType="text"
                     app:textStyle="7" />
+
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
+                    android:id="@+id/tv_errorFirstName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="#E61014"
+                    android:textSize="10dp"
+                    android:visibility="gone"
+                    app:textStyle="8" />
 
                 <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
@@ -70,9 +81,20 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_text_bg"
-                    android:hint="Abc"
+                    android:hint="Enter last Name"
                     android:inputType="text"
                     app:textStyle="7" />
+
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
+                    android:id="@+id/tv_errorLastName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="#E61014"
+                    android:textSize="10dp"
+                    android:visibility="gone"
+                    app:textStyle="8" />
+
 
                 <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
@@ -90,9 +112,20 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_text_bg"
-                    android:hint="Abc"
+                    android:hint="Enter Email Address"
                     android:inputType="text"
                     app:textStyle="7" />
+
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
+                    android:id="@+id/tv_errorEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="#E61014"
+                    android:textSize="10dp"
+                    android:visibility="gone"
+                    app:textStyle="8" />
+
 
                 <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
@@ -110,9 +143,20 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_text_bg"
-                    android:hint="Abc"
-                    android:inputType="text"
+                    android:hint="Enter New Password"
+                    android:inputType="textPassword"
                     app:textStyle="7" />
+
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
+                    android:id="@+id/tv_errorNewPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="#E61014"
+                    android:textSize="10dp"
+                    android:visibility="gone"
+                    app:textStyle="8" />
+
 
                 <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
@@ -130,9 +174,20 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_text_bg"
-                    android:hint="Abc"
-                    android:inputType="text"
+                    android:hint="Confirm Password"
+                    android:inputType="textPassword"
                     app:textStyle="7" />
+
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
+                    android:id="@+id/tv_errorConfirmPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="#E61014"
+                    android:textSize="10dp"
+                    android:visibility="gone"
+                    app:textStyle="8" />
+
 
                 <com.gts.saintfarmpractice.util.SaintfarmTextView
                     android:layout_width="wrap_content"
@@ -143,20 +198,6 @@
                     android:textColor="@color/et_heading_text_color"
                     app:textStyle = "8"/>
 
-        <!--        <EditText-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginTop="7dp"-->
-        <!--            android:background="@drawable/edit_text_bg"-->
-        <!--            android:fontFamily="@font/nunito_sans_bold"-->
-        <!--            android:hint="Search building/Area/Etc."-->
-        <!--            android:padding="10dp"-->
-        <!--            android:textColor="@color/page_heading_text_color"-->
-        <!--            android:textColorHint="@color/et_hint_text_color"-->
-        <!--            android:textSize="14sp">-->
-
-        <!--        </EditText>-->
-
                 <com.gts.saintfarmpractice.util.SaintfarmEditText
                     android:id="@+id/et_address"
                     style="@style/EditText"
@@ -164,15 +205,27 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="10dp"
                     android:background="@drawable/edit_text_bg"
-                    android:hint="Abc"
+                    android:hint="Enter Address"
                     android:inputType="text"
                     app:textStyle="7" />
+
+                <com.gts.saintfarmpractice.util.SaintfarmTextView
+                    android:id="@+id/tv_errorAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textColor="#E61014"
+                    android:textSize="10dp"
+                    android:visibility="gone"
+                    app:textStyle="8" />
+
+
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/btn_register"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
-                    android:layout_marginTop="15dp"
-                    android:layout_marginBottom="25dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="15dp"
                     android:text="Save and proceed"
                     android:textSize="@dimen/btn_text_size"
                     android:textColor="@color/white"

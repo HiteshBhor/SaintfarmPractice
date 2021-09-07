@@ -74,7 +74,7 @@
             android:layout_weight="1"
             android:layout_marginStart="36dp"
             android:layout_marginEnd="36dp"
-            android:gravity="center_vertical"
+            android:gravity="bottom"
             android:orientation="vertical">
 
 
@@ -117,7 +117,7 @@
             <com.gts.saintfarmpractice.util.SaintfarmTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="34dp"
+                android:layout_marginTop="24dp"
                 android:text="Email ID*"
                 android:textSize="12dp"
                 android:textColor="@color/et_heading_text_color"
@@ -130,9 +130,20 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edit_text_bg"
-                android:hint="Abc"
+                android:hint="Enter Email Address"
                 android:inputType="text"
                 app:textStyle="7" />
+
+            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                android:id="@+id/tv_error_email_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="#E61014"
+                android:textSize="10dp"
+                android:visibility="gone"
+                app:textStyle="8" />
+
 
             <com.gts.saintfarmpractice.util.SaintfarmTextView
                 android:layout_width="wrap_content"
@@ -150,9 +161,20 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/edit_text_bg"
-                android:hint="Abc"
-                android:inputType="text"
+                android:hint="Enter Password"
+                android:inputType="textPassword"
                 app:textStyle="7" />
+
+            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                android:id="@+id/tv_error_password_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textColor="#E61014"
+                android:textSize="10dp"
+                android:visibility="gone"
+                app:textStyle="8" />
+
 
             <com.gts.saintfarmpractice.util.SaintfarmTextView
                 android:id="@+id/tv_forgotPassword"
@@ -171,6 +193,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="24dp"
+                android:layout_marginBottom="15dp"
                 android:text="Login"
                 android:textSize="12dp"
                 android:textColor="@color/white"

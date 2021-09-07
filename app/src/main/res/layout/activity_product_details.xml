@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_product_detail"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/et_heading_text_color"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="#F8F7F5"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="270dp">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginTop="-12dp"
+                    android:layout_marginBottom="18dp"
+                    android:clipToPadding="true"
+                    android:elevation="0dp"
+                    app:cardBackgroundColor="@color/transparent"
+                    app:cardCornerRadius="12dp"
+                    app:cardElevation="0dp"
+                    app:cardPreventCornerOverlap="true"
+                    card_view:cardPreventCornerOverlap="true">
+
+                    <ImageView
+                        android:id="@+id/imgProduct"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="centerCrop" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        />
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="76dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="12dp">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal">
+
+                            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="St. "
+                                android:textColor="@color/et_heading_text_color"
+                                android:textSize="18dp"
+                                app:textStyle="0" />
+
+                            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                                android:id="@+id/tvProductName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="2dp"
+                                android:ellipsize="end"
+                                android:hint="-"
+                                android:maxLines="2"
+                                android:textColor="@color/et_heading_text_color"
+                                android:textColorHint="@color/et_heading_text_color"
+                                android:textSize="18dp"
+                                app:textStyle="0" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="5dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Rs. "
+                                android:textColor="@color/page_heading_text_color"
+                                android:textSize="14dp"
+                                app:textStyle="0" />
+
+                            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                                android:id="@+id/tvPrice"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:hint="-"
+                                android:textColor="@color/et_heading_text_color"
+                                android:textColorHint="@color/et_heading_text_color"
+                                android:textSize="14dp"
+                                app:textStyle="7" />
+
+                            <LinearLayout
+                                android:id="@+id/llQty"
+                                android:layout_width="wrap_content"
+                                android:layout_height="25dp"
+                                android:background="@drawable/dr_golden_border"
+                                android:gravity="center"
+                                android:orientation="horizontal">
+
+                                <ImageView
+                                    android:id="@+id/imgQtyMinus"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="5dp"
+                                    android:layout_marginEnd="2dp"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="5dp"
+                                    android:src="@drawable/ic_minus_gold" />
+
+                                <com.gts.saintfarmpractice.util.SaintfarmTextView
+                                    android:id="@+id/tvQty"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:gravity="center"
+                                    android:text="1"
+                                    android:textColor="@color/et_heading_text_color"
+                                    android:textSize="12dp"
+                                    app:textStyle="5" />
+
+                                <ImageView
+                                    android:id="@+id/imgQtyPlus"
+                                    android:layout_width="20dp"
+                                    android:layout_height="20dp"
+                                    android:layout_gravity="center"
+                                    android:layout_marginStart="2dp"
+                                    android:layout_marginEnd="5dp"
+                                    android:contentDescription="@string/app_name"
+                                    android:padding="5dp"
+                                    android:src="@drawable/ic_plus_gold" />
+                            </LinearLayout>
+                        </LinearLayout>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@drawable/dr_golden_dashed_line" />
+
+                        <com.gts.saintfarmpractice.util.SaintfarmTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Select Size"
+                            android:textColor="@color/page_heading_text_color"
+                            android:textSize="12dp"
+                            app:textStyle="5" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_marginTop="20dp"
+                            android:layout_marginEnd="70dp">
+
+                            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="250gm"
+                                android:textColor="@color/et_heading_text_color"
+                                android:textSize="12dp"/>
+
+                            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="500gm"
+                                android:textColor="@color/page_heading_text_color"
+                                android:textSize="12dp"/>
+
+                            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:text="750gm"
+                                android:textColor="@color/page_heading_text_color"
+                                android:textSize="12dp"/>
+
+                            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="1kg"
+                                android:textColor="@color/page_heading_text_color"
+                                android:textSize="12dp"/>
+
+                        </LinearLayout>
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:weightSum="1">
+
+                        <LinearLayout
+                            android:id="@+id/llDescription"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="vertical">
+
+                            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                                android:id="@+id/tvDescriptionLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Description"
+                                android:textColor="@color/page_heading_text_color"
+                                android:textSize="12dp"
+                                app:textStyle="5" />
+
+                            <View
+                                android:id="@+id/dividerDescription"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/et_heading_text_color" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/llHealthBenefits"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:orientation="vertical">
+
+                            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                                android:id="@+id/tvHealthBenefitsLabel"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Health Benefits"
+                                android:textColor="@color/page_heading_text_color"
+                                android:textSize="12dp"
+                                app:textStyle="5" />
+
+                            <View
+                                android:id="@+id/dividerHealthBenefits"
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:layout_marginTop="10dp"
+                                android:background="@color/et_heading_text_color" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginEnd="16dp"
+                        android:orientation="vertical">
+
+                        <com.gts.saintfarmpractice.util.SaintfarmTextView
+                            android:id="@+id/tvDescription"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:textColor="@color/page_heading_text_color"
+                            android:textSize="12dp"
+                            app:textStyle="5" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="25dp">
+
+                <LinearLayout
+                    android:id="@+id/llAddToCart"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="@drawable/btn_bg"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_cart_white" />
+
+                    <com.gts.saintfarmpractice.util.SaintfarmTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="Add To Cart"
+                        android:textColor="@color/white"
+                        app:textStyle="5" />
+                </LinearLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </FrameLayout>
+</LinearLayout>

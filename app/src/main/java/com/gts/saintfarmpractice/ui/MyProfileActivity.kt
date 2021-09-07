@@ -17,6 +17,7 @@ class  MyProfileActivity : AppCompatActivity() {
     lateinit var viewModel: UserViewModel
 
     private lateinit var mSharedPreferences: SharedPreferences
+    private lateinit var editor: SharedPreferences.Editor
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,7 +26,10 @@ class  MyProfileActivity : AppCompatActivity() {
         setupActionBar()
 
         mSharedPreferences = getSharedPreferences("UserDetails", MODE_PRIVATE)
+        editor = mSharedPreferences.edit()
+
         var email = mSharedPreferences.getString("email", "Error")
+
 
         viewModel = ViewModelProvider(this@MyProfileActivity, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(
             UserViewModel::class.java)
@@ -48,6 +52,11 @@ class  MyProfileActivity : AppCompatActivity() {
             if(firstName.isNotEmpty() && lastName.isNotEmpty()
                 && password.isNotEmpty() && address.isNotEmpty()){
                 this.updateUserProfile1(firstName, lastName, password, address, email)
+
+                editor.putString("firstName", firstName)
+                editor.putString("lastName", lastName)
+                editor.putString("address", address)
+                editor.apply()
             }
         }
 

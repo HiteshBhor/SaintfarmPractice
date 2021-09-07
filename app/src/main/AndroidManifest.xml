@@ -2,9 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.gts.saintfarmpractice">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
-
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -13,12 +12,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.SaintfarmPractice">
-        <activity android:name=".ui.UserListActivity"></activity>
-        <activity android:name=".ui.MyProfileActivity" />
+        <activity android:name=".ui.MyOrdersActivity"></activity>
+        <activity android:name=".ui.ProductDetailsActivity"></activity>
+        <activity android:name=".ui.ProductsActivity" />
+        <activity android:name=".ui.UserListActivity" />
+        <activity
+            android:name=".ui.MyProfileActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".ui.MainActivity" />
         <activity
             android:name=".ui.auth.LoginActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,7 +32,8 @@
         </activity>
         <activity
             android:name=".ui.auth.RegisterActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
     </application>
 
 </manifest>

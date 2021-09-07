@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="200dp"
     android:background="@drawable/nav_header_main_background"
-    android:gravity="center_vertical"
+    android:gravity="bottom"
     android:orientation="horizontal"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
@@ -26,7 +26,7 @@
             android:contentDescription="image"
             android:src="@drawable/person_outline_24px"/>
 
-        <TextView
+        <com.gts.saintfarmpractice.util.SaintfarmTextView
             android:id="@+id/tv_username"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,11 +34,11 @@
             android:layout_marginTop="5dp"
             android:layout_marginEnd="16dp"
             android:textColor="@android:color/white"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:text="UserName"
-            android:fontFamily="@font/nunitosans_normal"/>
+            app:textStyle="7"/>
 
-        <TextView
+        <com.gts.saintfarmpractice.util.SaintfarmTextView
             android:id="@+id/tv_eMail"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -47,9 +47,9 @@
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="10dp"
             android:textColor="@android:color/white"
-            android:textSize="18dp"
+            android:textSize="14dp"
             android:text="username@username.com"
-            android:fontFamily="@font/nunitosans_normal"/>
+            app:textStyle= "8"/>
 
     </LinearLayout>
 

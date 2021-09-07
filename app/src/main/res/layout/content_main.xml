@@ -1,18 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="24dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/menu_icon" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/cart_icon" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="36dp"
+            android:orientation="horizontal">
+
+            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Hey"
+                android:textColor="#4C4C4C"
+                android:textSize="20dp"
+                app:textStyle="8" />
+
+            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                android:id="@+id/tv_currentUser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="Anisha"
+                android:textColor="#4C4C4C"
+                android:textSize="20dp"
+                app:textStyle="7" />
+
+            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=","
+                android:textColor="#4C4C4C"
+                android:textSize="20dp"
+                app:textStyle="7" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="36dp"
+            android:orientation="horizontal">
+
+            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome to"
+                android:textColor="#4C4C4C"
+                android:textSize="20dp"
+                app:textStyle="8" />
+
+            <ImageView
+                android:layout_width="97dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="2dp"
+                android:src="@drawable/ic_saintfood"
+                />
+
+        </LinearLayout>
+
+        <com.gts.saintfarmpractice.util.SaintfarmEditText
+            android:id="@+id/et_eMail_login"
+            style="@style/EditText"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="36dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="36dp"
+            android:background="@drawable/edit_text_bg"
+            android:drawableStart="@drawable/custom_icon_search"
+            android:drawablePadding="16dp"
+            android:hint="What do you need today?"
+            android:textSize="13dp"
+            android:inputType="text"
+            android:paddingStart="25dp"
+            app:textStyle="8" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="40dp"
+            android:orientation="vertical">
+
+            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Featured"
+                android:textColor="#4C4C4C"
+                android:textSize="12dp"
+                app:textStyle="7" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_featured"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                tools:listitem="@layout/featured_item" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:orientation="vertical">
+
+            <com.gts.saintfarmpractice.util.SaintfarmTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Shop by category"
+                android:textColor="#4C4C4C"
+                android:textSize="12dp"
+                app:textStyle="7" />
+
+            <com.gts.saintfarmpractice.util.SaintfarmRecyclerView
+                android:id="@+id/rv_shopByCategory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:paddingBottom="16dp"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/shop_by_category_item" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</ScrollView>

@@ -1,182 +1,190 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".ui.MyProfileActivity">
-
-    <com.google.android.material.appbar.AppBarLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
-
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar_my_profile_activity"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="@color/et_heading_text_color"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-    </com.google.android.material.appbar.AppBarLayout>
+    tools:context=".ui.MyProfileActivity"
+    android:fitsSystemWindows="true">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <androidx.cardview.widget.CardView
+        <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="10dp"
-            android:elevation="10dp"
-            app:cardCornerRadius="10dp">
+            android:layout_height="wrap_content"
+            android:theme="@style/AppTheme.AppBarOverlay">
 
-            <LinearLayout
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_my_profile_activity"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:paddingStart="26dp"
-                android:paddingEnd="26dp">
+                android:layout_height="?attr/actionBarSize"
+                android:background="@color/et_heading_text_color"
+                app:popupTheme="@style/AppTheme.PopupOverlay" />
+        </com.google.android.material.appbar.AppBarLayout>
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/iv_profile_user_image"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
-                    android:layout_gravity="center_horizontal"
-                    app:civ_border_color="@color/et_heading_text_color"
-                    app:civ_border_width="1dp"
-                    app:civ_circle_background_color="@color/white"
-                    android:contentDescription="image"
-                    android:src="@drawable/person_outline_24px"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-                <com.gts.saintfarmpractice.util.SaintfarmTextView
-                    android:layout_width="wrap_content"
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:elevation="10dp"
+                app:cardCornerRadius="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:fontFamily="@font/nunitosans_normal"
-                    android:text="First Name*"
-                    android:textColor="@color/et_heading_text_color"
-                    android:textSize="12dp"
-                    app:textStyle = "8" />
+                    android:orientation="vertical"
+                    android:paddingStart="26dp"
+                    android:paddingEnd="26dp">
 
-                <com.gts.saintfarmpractice.util.SaintfarmEditText
-                    android:id="@+id/et_firstName"
-                    style="@style/EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/edit_text_bg"
-                    android:hint="Abc"
-                    android:inputType="text"
-                    app:textStyle="7" />
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/iv_profile_user_image"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_gravity="center_horizontal"
+                        app:civ_border_color="@color/et_heading_text_color"
+                        app:civ_border_width="1dp"
+                        app:civ_circle_background_color="@color/white"
+                        android:contentDescription="image"
+                        android:src="@drawable/person_outline_24px"/>
 
-                <com.gts.saintfarmpractice.util.SaintfarmTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="Last Name*"
-                    android:textColor="@color/et_heading_text_color"
-                    android:textSize="12dp"
-                    app:textStyle = "8"/>
+                    <com.gts.saintfarmpractice.util.SaintfarmTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="25dp"
+                        android:fontFamily="@font/nunitosans_normal"
+                        android:text="First Name*"
+                        android:textColor="@color/et_heading_text_color"
+                        android:textSize="12dp"
+                        app:textStyle = "8" />
 
-                <com.gts.saintfarmpractice.util.SaintfarmEditText
-                    android:id="@+id/et_lastName"
-                    style="@style/EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/edit_text_bg"
-                    android:hint="Abc"
-                    android:inputType="text"
-                    app:textStyle="7" />
+                    <com.gts.saintfarmpractice.util.SaintfarmEditText
+                        android:id="@+id/et_firstName"
+                        style="@style/EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:hint="Abc"
+                        android:inputType="text"
+                        app:textStyle="7" />
 
-                <com.gts.saintfarmpractice.util.SaintfarmTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="Email Address*"
-                    android:textColor="@color/et_heading_text_color"
-                    android:textSize="12dp"
-                    app:textStyle = "8"/>
+                    <com.gts.saintfarmpractice.util.SaintfarmTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Last Name*"
+                        android:textColor="@color/et_heading_text_color"
+                        android:textSize="12dp"
+                        app:textStyle = "8"/>
 
-                <com.gts.saintfarmpractice.util.SaintfarmEditText
-                    android:id="@+id/et_eMail"
-                    style="@style/EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/edit_text_bg"
-                    android:hint="Abc"
-                    android:inputType="text"
-                    app:textStyle="7" />
+                    <com.gts.saintfarmpractice.util.SaintfarmEditText
+                        android:id="@+id/et_lastName"
+                        style="@style/EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:hint="Abc"
+                        android:inputType="text"
+                        app:textStyle="7" />
 
-                <com.gts.saintfarmpractice.util.SaintfarmTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="Password*"
-                    android:textColor="@color/et_heading_text_color"
-                    android:textSize="12dp"
-                    app:textStyle = "8"/>
+                    <com.gts.saintfarmpractice.util.SaintfarmTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Email Address*"
+                        android:textColor="@color/et_heading_text_color"
+                        android:textSize="12dp"
+                        app:textStyle = "8"/>
 
-                <com.gts.saintfarmpractice.util.SaintfarmEditText
-                    android:id="@+id/et_password"
-                    style="@style/EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/edit_text_bg"
-                    android:hint="Abc"
-                    android:inputType="text"
-                    app:textStyle="7" />
+                    <com.gts.saintfarmpractice.util.SaintfarmEditText
+                        android:id="@+id/et_eMail"
+                        style="@style/EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:hint="Abc"
+                        android:inputType="text"
+                        app:textStyle="7" />
 
-                <com.gts.saintfarmpractice.util.SaintfarmTextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="24dp"
-                    android:text="Address*"
-                    android:textColor="@color/et_heading_text_color"
-                    android:textSize="12dp"
-                    app:textStyle = "8"/>
+                    <com.gts.saintfarmpractice.util.SaintfarmTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Password*"
+                        android:textColor="@color/et_heading_text_color"
+                        android:textSize="12dp"
+                        app:textStyle = "8"/>
 
-        <!--        <EditText-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_marginTop="7dp"-->
-        <!--            android:background="@drawable/edit_text_bg"-->
-        <!--            android:fontFamily="@font/nunito_sans_bold"-->
-        <!--            android:hint="Search building/Area/Etc."-->
-        <!--            android:padding="10dp"-->
-        <!--            android:textColor="@color/page_heading_text_color"-->
-        <!--            android:textColorHint="@color/et_hint_text_color"-->
-        <!--            android:textSize="14sp">-->
+                    <com.gts.saintfarmpractice.util.SaintfarmEditText
+                        android:id="@+id/et_password"
+                        style="@style/EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:hint="Abc"
+                        android:inputType="text"
+                        app:textStyle="7" />
 
-        <!--        </EditText>-->
+                    <com.gts.saintfarmpractice.util.SaintfarmTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:text="Address*"
+                        android:textColor="@color/et_heading_text_color"
+                        android:textSize="12dp"
+                        app:textStyle = "8"/>
 
-                <com.gts.saintfarmpractice.util.SaintfarmEditText
-                    android:id="@+id/et_address"
-                    style="@style/EditText"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/edit_text_bg"
-                    android:hint="Abc"
-                    android:inputType="text"
-                    app:textStyle="7" />
+                    <!--        <EditText-->
+                    <!--            android:layout_width="match_parent"-->
+                    <!--            android:layout_height="wrap_content"-->
+                    <!--            android:layout_marginTop="7dp"-->
+                    <!--            android:background="@drawable/edit_text_bg"-->
+                    <!--            android:fontFamily="@font/nunito_sans_bold"-->
+                    <!--            android:hint="Search building/Area/Etc."-->
+                    <!--            android:padding="10dp"-->
+                    <!--            android:textColor="@color/page_heading_text_color"-->
+                    <!--            android:textColorHint="@color/et_hint_text_color"-->
+                    <!--            android:textSize="14sp">-->
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/btn_Update"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginTop="30dp"
-                    android:layout_marginBottom="25dp"
-                    android:text="Update"
-                    android:textSize="@dimen/btn_text_size"
-                    android:textColor="@color/white"
-                    android:background="@drawable/btn_bg"
-                    android:textAllCaps="false"
-                    android:fontFamily="@font/nunitosans_normal"/>
-            </LinearLayout>
-        </androidx.cardview.widget.CardView>
+                    <!--        </EditText>-->
+
+                    <com.gts.saintfarmpractice.util.SaintfarmEditText
+                        android:id="@+id/et_address"
+                        style="@style/EditText"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/edit_text_bg"
+                        android:hint="Abc"
+                        android:inputType="text"
+                        app:textStyle="7" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/btn_Update"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginBottom="25dp"
+                        android:text="Update"
+                        android:textSize="@dimen/btn_text_size"
+                        android:textColor="@color/white"
+                        android:background="@drawable/btn_bg"
+                        android:textAllCaps="false"
+                        android:fontFamily="@font/nunitosans_normal"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
+</ScrollView>

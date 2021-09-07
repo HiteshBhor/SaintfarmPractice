@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId "com.gts.saintfarmpractice"
-        minSdkVersion 16
+        minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -41,6 +41,7 @@ dependencies {
 
     // Room components
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
 
@@ -73,6 +74,9 @@ dependencies {
 
     //CirculerImageView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //Gson
+    implementation 'com.google.code.gson:gson:2.8.8'
 
     // Testing
     testImplementation "junit:junit:$rootProject.junitVersion"

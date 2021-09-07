@@ -7,6 +7,11 @@
             android:title="My Profile" />
 
         <item
+            android:id="@+id/nav_my_orders"
+            android:icon="@drawable/ic_my_orders"
+            android:title="My Orders" />
+
+        <item
             android:id="@+id/nav_user_list"
             android:icon="@drawable/ic_nav_user_list"
             android:title="User List" />

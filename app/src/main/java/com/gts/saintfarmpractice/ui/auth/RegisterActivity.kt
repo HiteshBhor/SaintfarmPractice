@@ -12,8 +12,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.gts.saintfarmpractice.*
 import com.gts.saintfarmpractice.models.User
-import com.gts.saintfarmpractice.util.Validator
+import com.gts.saintfarmpractice.util.Validator1
 import com.gts.saintfarmpractice.viewmodel.UserViewModel
+import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 
@@ -92,51 +93,87 @@ class RegisterActivity : AppCompatActivity() {
         var isValid: Boolean = true
         var message: String = ""
 
-        message = Validator.isValidFirstName(
+        message = Validator1.isValidFirstName(
             this@RegisterActivity,
             firstName?.text.toString().trim()
         )
         if (message != null && message.isNotEmpty()) {
             isValid = false
 
-            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
-            return isValid
+            tv_errorFirstName.visibility = View.VISIBLE
+            tv_errorFirstName.text = message
+
+            et_firstName.setBackgroundResource(R.drawable.dr_edittext_bg_error)
+
+//            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+//            return isValid
+        }else{
+            //Set number UI to normal
+            tv_errorFirstName.visibility = View.GONE
+            et_firstName.setBackgroundResource(R.drawable.edit_text_bg)
         }
 
-        message = Validator.isValidLastName(
+        message = Validator1.isValidLastName(
             this@RegisterActivity,
             lastName?.text.toString().trim()
         )
         if (message != null && message.isNotEmpty()) {
             isValid = false
 
-            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
-            return isValid
+            tv_errorLastName.visibility = View.VISIBLE
+            tv_errorLastName.text = message
+
+            et_lastName.setBackgroundResource(R.drawable.dr_edittext_bg_error)
+
+//            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+//            return isValid
+        }else{
+            //Set number UI to normal
+            tv_errorLastName.visibility = View.GONE
+            et_lastName.setBackgroundResource(R.drawable.edit_text_bg)
         }
 
-        message = Validator.isValidEmail(
+        message = Validator1.isValidEmail(
             this@RegisterActivity,
             eMail?.text.toString().trim()
         )
         if (message != null && message.isNotEmpty()) {
             isValid = false
 
-            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
-            return isValid
+            tv_errorEmail.visibility = View.VISIBLE
+            tv_errorEmail.text = message
+
+            et_eMail.setBackgroundResource(R.drawable.dr_edittext_bg_error)
+
+//            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+//            return isValid
+        }else{
+            //Set number UI to normal
+            tv_errorEmail.visibility = View.GONE
+            et_eMail.setBackgroundResource(R.drawable.edit_text_bg)
         }
 
-        message = Validator.isValidNewPassword(
+        message = Validator1.isValidNewPassword(
             this@RegisterActivity,
             password?.text.toString().trim()
         )
         if (message != null && message.isNotEmpty()) {
             isValid = false
 
-            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
-            return isValid
+            tv_errorNewPassword.visibility = View.VISIBLE
+            tv_errorNewPassword.text = message
+
+            et_newPassword.setBackgroundResource(R.drawable.dr_edittext_bg_error)
+
+//            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+//            return isValid
+        }else{
+            //Set number UI to normal
+            tv_errorNewPassword.visibility = View.GONE
+            et_newPassword.setBackgroundResource(R.drawable.edit_text_bg)
         }
 
-        message = Validator.isValidConfirmPassword(
+        message = Validator1.isValidConfirmPassword(
             this@RegisterActivity,
             password?.text.toString().trim(),
             repassword?.text.toString().trim(),
@@ -144,19 +181,37 @@ class RegisterActivity : AppCompatActivity() {
         if (message != null && message.isNotEmpty()) {
             isValid = false
 
-            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
-            return isValid
+            tv_errorConfirmPassword.visibility = View.VISIBLE
+            tv_errorConfirmPassword.text = message
+
+            et_confirmPassword.setBackgroundResource(R.drawable.dr_edittext_bg_error)
+
+//            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+//            return isValid
+        }else{
+            //Set number UI to normal
+            tv_errorConfirmPassword.visibility = View.GONE
+            et_confirmPassword.setBackgroundResource(R.drawable.edit_text_bg)
         }
 
-        message = Validator.isValidAddress1(
+        message = Validator1.isValidAddress1(
             this@RegisterActivity,
             address?.text.toString().trim()
         )
         if (message != null && message.isNotEmpty()) {
             isValid = false
 
-            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
-            return isValid
+            tv_errorAddress.visibility = View.VISIBLE
+            tv_errorAddress.text = message
+
+            et_address.setBackgroundResource(R.drawable.dr_edittext_bg_error)
+
+//            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+//            return isValid
+        }else{
+            //Set number UI to normal
+            tv_errorAddress.visibility = View.GONE
+            et_address.setBackgroundResource(R.drawable.edit_text_bg)
         }
 
         return isValid

@@ -14,9 +14,10 @@ import com.gts.saintfarmpractice.*
 import com.gts.saintfarmpractice.models.User
 import com.gts.saintfarmpractice.ui.BaseActivity
 import com.gts.saintfarmpractice.ui.MainActivity
-import com.gts.saintfarmpractice.util.Validator
+import com.gts.saintfarmpractice.util.Validator1
 import com.gts.saintfarmpractice.viewmodel.UserViewModel
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_register.*
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 
@@ -81,19 +82,27 @@ class LoginActivity : BaseActivity() {
                     list?.let {
                         arrayUsers.addAll(it)
 
-                        for (itm in arrayUsers){
-                            if(itm.email == eMail  && itm.password == password){
-                                viewModel.loginUser(eMail, password)
-                                editor.putString("email", eMail)
-                                editor.putString("password", password)
-                                editor.putBoolean("isLoggedIn", true);
-                                editor.apply()
-                                Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
-                                startActivity(Intent(this@LoginActivity, MainActivity::class.java ))
-                                finish()
-                                return@Observer
-                            }else{
-                                Toast.makeText(this@LoginActivity, "Invalid Credentials", Toast.LENGTH_SHORT).show()
+                        if (it.isNullOrEmpty()){
+                            Toast.makeText(
+                                this,
+                                "User not Registered. Kindly register",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                        }else{
+                            for (itm in arrayUsers){
+                                if(itm.email == eMail  && itm.password == password){
+                                    viewModel.loginUser(eMail, password)
+                                    editor.putString("email", eMail)
+                                    editor.putString("password", password)
+                                    editor.putBoolean("isLoggedIn", true);
+                                    editor.apply()
+                                    Toast.makeText(this@LoginActivity, "Login Successful", Toast.LENGTH_SHORT).show()
+                                    startActivity(Intent(this@LoginActivity, MainActivity::class.java ))
+                                    finish()
+                                    return@Observer
+                                }else{
+                                    Toast.makeText(this@LoginActivity, "Invalid Credentials", Toast.LENGTH_SHORT).show()
+                                }
                             }
                         }
                     }
@@ -106,26 +115,44 @@ class LoginActivity : BaseActivity() {
         var isValid: Boolean = true
         var message: String = ""
 
-        message = Validator.isValidEmail(
+        message = Validator1.isValidEmail(
             this@LoginActivity,
             eMail?.text.toString().trim()
         )
         if (message != null && message.isNotEmpty()) {
             isValid = false
 
-            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
-            return isValid
+            tv_error_email_login.visibility = View.VISIBLE
+            tv_error_email_login.text = message
+
+            et_eMail_login.setBackgroundResource(R.drawable.dr_edittext_bg_error)
+
+//            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+//            return isValid
+        }else{
+            //Set number UI to normal
+            tv_error_email_login.visibility = View.GONE
+            et_eMail_login.setBackgroundResource(R.drawable.edit_text_bg)
         }
 
-        message = Validator.isValidNewPassword(
+        message = Validator1.isValidNewPassword(
             this@LoginActivity,
             password?.text.toString().trim()
         )
         if (message != null && message.isNotEmpty()) {
             isValid = false
 
-            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
-            return isValid
+            tv_error_password_login.visibility = View.VISIBLE
+            tv_error_password_login.text = message
+
+            et_password_login.setBackgroundResource(R.drawable.dr_edittext_bg_error)
+
+//            Toast.makeText(this, "$message", Toast.LENGTH_SHORT).show()
+//            return isValid
+        }else{
+            //Set number UI to normal
+            tv_error_password_login.visibility = View.GONE
+            et_password_login.setBackgroundResource(R.drawable.edit_text_bg)
         }
 
         return isValid

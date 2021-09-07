@@ -49,35 +49,35 @@ public class FontsUtils {
         Typeface typeface = null;
         switch (fontForStyle) {
             case FontsUtils.bodoni:
-                typeface = Typeface.createFromAsset(context.getAssets(), "bodoni.ttf");
+                typeface = Typeface.createFromAsset(context.getAssets(), "fonts/bodoni.ttf");
                 break;
             case FontsUtils.inriaserif_bold:
-                typeface = Typeface.createFromAsset(context.getAssets(), "inriaserif_bold.ttf");
+                typeface = Typeface.createFromAsset(context.getAssets(), "fonts/inriaserif_bold.ttf");
                 break;
             case FontsUtils.inriaserif_bold_italic:
-                typeface = Typeface.createFromAsset(context.getAssets(), "inriaserif_bold_italic.ttf");
+                typeface = Typeface.createFromAsset(context.getAssets(), "fonts/inriaserif_bold_italic.ttf");
                 break;
             case FontsUtils.inriaserif_italic:
-                typeface = Typeface.createFromAsset(context.getAssets(), "inriaserif_italic.ttf");
+                typeface = Typeface.createFromAsset(context.getAssets(), "fonts/inriaserif_italic.ttf");
                 break;
             case FontsUtils.inriaserif_normal:
-                typeface = Typeface.createFromAsset(context.getAssets(), "inriaserif_normal.ttf");
+                typeface = Typeface.createFromAsset(context.getAssets(), "fonts/inriaserif_normal.ttf");
                 break;
 
             case FontsUtils.montserrat_regular:
-                typeface = Typeface.createFromAsset(context.getAssets(), "montserrat_regular.ttf");
+                typeface = Typeface.createFromAsset(context.getAssets(), "fonts/montserrat_regular.ttf");
                 break;
             case FontsUtils.myriadpro_normal:
-                typeface = Typeface.createFromAsset(context.getAssets(), "myriadpro_normal.otf");
+                typeface = Typeface.createFromAsset(context.getAssets(), "fonts/myriadpro_normal.otf");
                 break;
             case FontsUtils.nunitosans_bold:
-                typeface = Typeface.createFromAsset(context.getAssets(), "nunitosans_bold.ttf");
+                typeface = Typeface.createFromAsset(context.getAssets(), "fonts/nunitosans_bold.ttf");
                 break;
             case FontsUtils.nunitosans_normal:
-                typeface = Typeface.createFromAsset(context.getAssets(), "nunitosans_normal.ttf");
+                typeface = Typeface.createFromAsset(context.getAssets(), "fonts/nunitosans_normal.ttf");
                 break;
             case FontsUtils.st_normal:
-                typeface = Typeface.createFromAsset(context.getAssets(), "st_normal.otf");
+                typeface = Typeface.createFromAsset(context.getAssets(), "fonts/st_normal.otf");
                 break;
         }
         return typeface;
